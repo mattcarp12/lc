@@ -47,9 +47,15 @@ public class Solution {
     }
 
     /**
-     * This solution uses dynamic programming (memoization)
+     * This solution uses dynamic programming (memoization).
+     * The idea is to store results of previous palindromes
+     * then reference those to determine future palindromes.
+     * The key recurrance relation is
+     * P[i][j] = P[i+1][j-1] && s.charAt(i)==s.charAt(j)
      * @param s
-     * @return
+     * @return substring of the longest palindromic substring
+     *         (this will be the first palindromic substring if
+     *         there are multiple substrings with the same length).
      */
     public static String longestPalindromicSubstringDP (String s) {
         if (s.length() == 0) return s;
