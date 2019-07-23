@@ -1,6 +1,6 @@
 import java.util.Random;
 
-class Solution {
+public class Solution {
     public static int minDistance(String word1, String word2) {
         int n1 = word1.length();
         int n2 = word2.length();
@@ -27,10 +27,9 @@ class Solution {
 
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
-        int targetStringLength = size;
         Random random = new Random();
-        StringBuilder buffer = new StringBuilder(targetStringLength);
-        for (int i = 0; i < targetStringLength; i++) {
+        StringBuilder buffer = new StringBuilder(size);
+        for (int i = 0; i < size; i++) {
             int randomLimitedInt = leftLimit + (int)
                     (random.nextFloat() * (rightLimit - leftLimit + 1));
             buffer.append((char) randomLimitedInt);
@@ -38,9 +37,9 @@ class Solution {
         return buffer.toString();
     }
 
-    private static void main(String[] args) {
+    public static void main(String[] args) {
         String s1 = randomString(10);
-        String s2 = randomString(12);
+        String s2 = randomString(10);
         int dist = minDistance(s1, s2);
         System.out.println("The distance between " + s1 + " and " + s2 + " is " + dist);
     }
