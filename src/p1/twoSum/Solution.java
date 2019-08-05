@@ -1,7 +1,7 @@
 /**
  * 
  */
-package lc.1.twoSum;
+package p1.twoSum;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class Solution {
 	public static void main(String[] args) {
 		int[] nums = {100, 50, 99, 20, 30, 48, 77};
 		int target = 127;
-		System.out.println(twoSum(nums, target));
+		System.out.println(twoSum(nums, target)[1]);
 	}
 }
 
