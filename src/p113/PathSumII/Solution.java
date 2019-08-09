@@ -18,7 +18,7 @@ public class Solution {
         int leftOver = sum - root.val;
         currPath.add(root.val);
         if (root.left == null && root.right == null && leftOver == 0)
-            paths.add(new ArrayList(currPath));
+            paths.add(new ArrayList<>(currPath));
         pathSumHelper(root.left, leftOver);
         pathSumHelper(root.right, leftOver);
         if(!currPath.isEmpty()) currPath.remove(currPath.size() - 1);

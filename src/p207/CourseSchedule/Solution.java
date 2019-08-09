@@ -23,7 +23,7 @@ public class Solution {
         return true;
     }
     
-    private boolean Dfs(int node, Set recSet) {
+    private boolean Dfs(int node, Set<Integer> recSet) {
         visited[node] = true;
         boolean canFinish = true;
         recSet.add(node);
