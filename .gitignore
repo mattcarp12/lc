@@ -3,3 +3,5 @@
 *.xml
 *.iml
 /bin/
+.classpath
+.project
