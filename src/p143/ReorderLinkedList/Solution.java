@@ -7,8 +7,8 @@ public class Solution {
     public void reorderList(ListNode head) {
         ListNode middle = findMiddle(head);
         ListNode head2 = middle.next;
-        middle.next = null;
-        head2 = reverse(middle.next);
+        middle.next = null; middle = null;
+        head2 = reverse(head2);
         merge(head, head2);
     }
     
@@ -22,25 +22,19 @@ public class Solution {
     }
     
     private ListNode reverse(ListNode head) {
-        ListNode p1 = head;
-        if (p1 == null) return p1;
-        ListNode p2 = p1.next;
-        if (p2 == null) return p1;
-        ListNode p3 = p2.next;
-        p1.next = null;
-        while (p3 != null) {
-            p2.next = p1;
-            p1 = p2;
-            p2 = p3;
-            p3 = p3.next;
+        ListNode prev = null, next = null, curr = head;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
-        p2.next = p1;
-        return p2;
+        return prev;
     }
     
     private void merge(ListNode l1, ListNode l2) {
         ListNode t1, t2;
-        while (l1.next != null && l2.next != null) {
+        while (l2 != null) {
             t1 = l1.next;
             t2 = l2.next;
             l1.next = l2;
@@ -48,8 +42,6 @@ public class Solution {
             l1 = t1;
             l2 = t2;
         }
-        if (l1.next == null) l1.next = l2;
-        if (l2.next == null) l2.next = l1;
     }
     
     public static void main(String[] args) {
