@@ -1,15 +1,8 @@
-/**
- * 
- */
 package p1.twoSum;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author mcarpenter
- *
- */
 
 public class Solution {
 	public static int[] twoSum(int[] nums, int target) {
