@@ -1,14 +1,23 @@
 package p226.InvertBinaryTree;
 
 public class InvertBinaryTree {
-    TreeNode root;
-    InvertBinaryTree() {}
+
+    /**
+     * Use recursion to invert a binary tree.
+     * If the tree is null, then return it. This is the base case.
+     * Otherwise, recursively call invertTree on the two child nodes,
+     * then swap those two nodes.
+     *
+     * @param root
+     * @return inverted root
+     */
     public static TreeNode invertTree(TreeNode root) {
         if (root == null) return root;
-        TreeNode left = invertTree(root.left);
-        TreeNode right = invertTree(root.right);
-        root.left = right;
-        root.right = left;
+        root.left = invertTree(root.left);
+        root.right = invertTree(root.right);
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
         return root;
     }
 
