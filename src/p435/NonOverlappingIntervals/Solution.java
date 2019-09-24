@@ -29,7 +29,7 @@ class Solution {
         return counter;
     }
 
-    boolean overlap(int[] a, int[] b) {
+    private boolean overlap(int[] a, int[] b) {
         // only works for sorted arrays
         return b[0] < a[1];
     }
