@@ -47,7 +47,6 @@ class Solution {
             // Slide the end of the window
             if (!freqMap.containsKey(charArray[windowEnd])) {
                 freqMap.put(charArray[windowEnd], 1);
-                pq.add();
             }
         }
 
